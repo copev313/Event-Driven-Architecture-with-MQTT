@@ -1,0 +1,11 @@
+version: "3"
+services:
+  message-mediator-broker:
+    container_name: message-mediator-broker-container
+    image: eclipse-mosquitto:2.0.15
+    volumes:
+      - ./message-mediator-broker/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    ports:
+      - 1883:1883
+    networks: 
+      - fresh-frontier-network
